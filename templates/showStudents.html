@@ -1,0 +1,41 @@
+<!-- Parent Code -->
+{% extends "parent.html"%}
+
+<!-- Title -->
+{%block title%}
+Show Students
+{%endblock%}
+
+<!-- Inherits attributes from parent -->
+{%block head%}
+{{super()}}
+{%endblock%}
+
+<!-- block heading -->
+{%block heading%}
+{{super()}}
+{%endblock%}
+
+<!-- block content -->
+{%block content%}
+<h1 class="display4 d-inline p-2">Show All Students</h1><a id="backToHome" class="btn btn-warning d-inline p-2" href="/">Home</a>
+<br>
+<a href="/show" class="btn btn-primary" id="loadAllStudents">Load All Students</a>
+<br>
+<br>
+    <table class="table table-warning">
+        <tr>
+            {%for header in headings%}
+                <th>{{header}}</th>
+            {%endfor%}
+        </tr>
+        
+        {%for row in data%}
+        <tr>
+            {%for cell in row%}
+            <td>{{cell}}</td>
+            {%endfor%}
+        </tr>
+        {%endfor%}
+    </table>
+{%endblock%}

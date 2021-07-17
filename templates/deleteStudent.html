@@ -1,0 +1,37 @@
+<!-- parent code -->
+{%extends "parent.html" %}
+
+<!-- Title -->
+{%block title%}
+    Delete Student
+{%endblock%}
+
+<!-- block head -->
+{%block head%}
+{{super ()}}
+{% endblock %}
+
+<!-- block heading -->
+{%block heading%}
+{{super ()}}
+{% endblock %}
+
+{%block content%}
+    <h1 class="display4">Delete Student</h1><a id="backToHome" class="btn btn-warning d-inline p-2" href="/">Home</a>
+    <br>
+    <br>
+    <form action="/remove" method="POST">
+        <div class="container-lg form-container">
+            {%import 'forms.html' as forms%}
+            <!-- Student Number -->
+            <div class="mb-3">
+                <label for="studentIDNumber" class="form-label">ID No.</label>
+                <input class="form-control" type="text" name="studentIDNumber">
+            </div>
+            <!-- Submit -->
+            <div class="text-center">
+                <button id="submit" type="submit" class="btn btn-danger">Remove</button>
+            </div>
+        </div>
+    </form>
+{%endblock%}

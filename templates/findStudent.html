@@ -1,0 +1,53 @@
+<!-- parent code -->
+{%extends "parent.html" %}
+
+<!-- Title -->
+{%block title%}
+    Find Student
+{%endblock%}
+
+<!-- block head -->
+{%block head%}
+{{super ()}}
+{% endblock %}
+
+<!-- block heading -->
+{%block heading%}
+{{super ()}}
+{% endblock %}
+
+{%block content%}
+    <h1 class="display4">Find Student</h1><a id="backToHome" class="btn btn-warning d-inline p-2" href="/">Home</a>
+    <br>
+    <br>
+    <form action="/find" method="POST">
+        <div class="container-lg form-container">
+            {%import 'forms.html' as forms%}
+            <!-- Student Number -->
+            <div class="mb-3">
+                <label for="studentIDNumber" class="form-label">ID No.</label>
+                <input class="form-control" type="text" name="studentIDNumber">
+            </div>
+            <!-- Submit -->
+            <div class="text-center">
+                <button id="submit" type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </form>
+
+    <table class="table table-info">
+        <tr>
+            {%for header in headings%}
+                <th>{{header}}</th>
+            {%endfor%}
+        </tr>
+        <!-- Row in data -->
+        {%for row in data%}
+        <tr>
+            {%for cell in row%}
+            <td>{{cell}}</td>
+            {%endfor%}
+        </tr>
+        {%endfor%}
+    </table>
+{%endblock%}

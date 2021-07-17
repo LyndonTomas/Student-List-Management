@@ -1,0 +1,43 @@
+<!-- parent code -->
+{%extends "parent.html" %}
+
+<!-- Title -->
+{%block title%}
+    Add Student
+{%endblock%}
+
+<!-- block head -->
+{%block head%}
+{{super ()}}
+{% endblock %}
+
+<!-- block heading -->
+{%block heading%}
+{{super ()}}
+{% endblock %}
+
+{%block content%}
+    <h1 class="display4">Add Student</h1><a id="backToHome" class="btn btn-warning d-inline p-2" href="/">Home</a>
+    <br>
+    <br>
+    <form action="/add" method="POST">
+        <div class="container-lg form-container">
+            {%import 'forms.html' as forms%}
+            <!-- Student Name -->
+            <div class="mb-3">
+                <label for="studentName" class="form-label">Student Name</label>
+                <input class="form-control" type="text" name="studentName">
+                <div id="nameReminder" class="form-text">Reminder: Do not add any commas (,) in the name. Just put it as FIRST NAME and LAST NAME.</div>
+            </div>
+            <!-- Student Number -->
+            <div class="mb-3">
+                <label for="studentIDNumber" class="form-label">ID No.</label>
+                <input class="form-control" type="text" name="studentIDNumber">
+            </div>
+            <!-- Submit -->
+            <div class="text-center">
+                <button id="submit" type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </div>
+    </form>
+{%endblock%}

@@ -1,0 +1,52 @@
+html{
+    height:100%;
+    overflow:auto;
+    margin:0px;
+    padding:0px;
+}
+body{
+    background-image: linear-gradient(45deg, #89f7fe, #66a6ff);
+    background-repeat: repeat;
+    min-height: 100%;
+    margin: 0px;
+    overflow:scroll;
+}
+#footer{
+    text-align: center;
+    background-color:rgba(0, 0, 0, .35);
+    margin-left: 30%;
+    margin-right: 30%;
+    color: white;
+}
+
+#studentList-table th{
+    color:white;
+}
+
+.button-row{
+    margin-top:20px;
+    padding-bottom:10px;
+}
+
+.form-container{
+    background-color: rgba(0, 0, 0, .3);
+    padding:20px;
+    margin-bottom: 30px;
+}
+
+#nameReminder, label{
+    color: white;
+}
+
+label{
+    font-weight: bold;
+}
+
+#backToHome{
+    float:right;
+}
+
+#carousel-label{
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
